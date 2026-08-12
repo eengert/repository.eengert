@@ -21,3 +21,14 @@ Run the **Publish Kodi repository** workflow and provide:
 
 The workflow changes the version only in a temporary packaging copy. It never
 modifies the source branch used for an upstream pull request.
+
+## TMDb Helper player bundle
+
+Use the following URL in TMDb Helper's **Players URL** setting:
+
+```text
+https://eengert.github.io/repository.eengert/jsonplayers.zip
+```
+
+This is the Old Man Jax player bundle with a Red Light 2.2.7 compatibility fix
+for episode playback through TMDb Helper.
