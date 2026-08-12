@@ -1,5 +1,5 @@
 {
-    "name": "Red Light - Source Select (Eengert Fix)",
+    "name": "Red Light - Source Select",
     "plugin": "plugin.video.redlight",
     "priority": 200,
     "is_resolvable": "true",
