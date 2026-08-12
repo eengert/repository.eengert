@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.eengert" name="Eengert Repository" version="1.0.0" provider-name="eengert">
+  <extension point="xbmc.addon.repository" name="Eengert Repository">
+    <dir minversion="20.9.1">
+      <info compressed="false">https://eengert.github.io/repository.eengert/omega/zips/addons.xml</info>
+      <checksum>https://eengert.github.io/repository.eengert/omega/zips/addons.xml.md5</checksum>
+      <datadir zip="true">https://eengert.github.io/repository.eengert/omega/zips/</datadir>
+    </dir>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Eengert Kodi add-on repository</summary>
+    <description lang="en_GB">Personal repository for maintained Kodi add-on builds.</description>
+    <disclaimer lang="en_GB">Unofficial builds maintained independently from the original developers.</disclaimer>
+    <platform>all</platform>
+  </extension>
+</addon>
