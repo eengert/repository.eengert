@@ -1,0 +1,48 @@
+name: Publish Kodi repository
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_ref:
+        description: Branch, tag, or commit in eengert/plugin.video.themoviedb.helper
+        required: true
+        default: codex/mdblist-next-episodes-watchlists
+      addon_version:
+        description: Numeric Kodi package version (x.y.z)
+        required: true
+        default: 6.16.901
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Kodi repository
+        uses: actions/checkout@v4
+
+      - name: Check out TMDb Helper source
+        uses: actions/checkout@v4
+        with:
+          repository: eengert/plugin.video.themoviedb.helper
+          ref: ${{ inputs.source_ref }}
+          path: .build/plugin.video.themoviedb.helper
+
+      - name: Build repository artifacts
+        run: >-
+          python3 scripts/build_repository.py
+          --source .build/plugin.video.themoviedb.helper
+          --version "${{ inputs.addon_version }}"
+
+      - name: Commit published artifacts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add omega/zips repository.eengert-*.zip
+          if git diff --cached --quiet; then
+            echo "No repository changes to publish"
+            exit 0
+          fi
+          git commit -m "Publish TMDb Helper ${{ inputs.addon_version }}"
+          git push
