@@ -31,4 +31,6 @@ https://eengert.github.io/repository.eengert/jsonplayers.zip
 ```
 
 This is the Old Man Jax player bundle with a Red Light 2.2.7 compatibility fix
-for episode playback through TMDb Helper.
+for episode playback through TMDb Helper. Select **Red Light - Auto Play
+(Eengert Fix)** as the default episode player so an older reconfigured
+`redlight.auto.json` cannot override the corrected definition.
