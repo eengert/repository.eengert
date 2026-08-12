@@ -1,6 +1,6 @@
 # Eengert Kodi Repository
 
-Personal Kodi repository for maintained builds of TMDb Helper.
+Personal Kodi repository for maintained builds of Red Light and TMDb Helper.
 
 ## Kodi File Manager source
 
@@ -11,6 +11,13 @@ https://eengert.github.io/repository.eengert/
 In Kodi, add that URL as a File Manager source, install
 `repository.eengert-1.0.0.zip`, then open **Install from repository** and choose
 **Eengert Repository**.
+
+## Red Light
+
+The repository includes a personal Red Light build with a more compact Play
+Next dialog. The dialog uses the active skin highlight color when the skin
+exposes `Skin.String(focuscolor.name)`, removes the redundant show title, and
+orders its actions as **Play**, **Cancel**, and **Hide**.
 
 ## Publishing a TMDb Helper build
 

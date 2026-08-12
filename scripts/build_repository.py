@@ -11,7 +11,6 @@ from xml.etree import ElementTree
 
 
 REPOSITORY_ID = "repository.eengert"
-ADDON_ID = "plugin.video.themoviedb.helper"
 VERSION_PATTERN = re.compile(r"^\d+\.\d+\.\d+$")
 IGNORED_NAMES = {
     ".git",
@@ -40,7 +39,12 @@ def create_zip(source_directory, destination):
     with zipfile.ZipFile(destination, "w", compression=zipfile.ZIP_DEFLATED) as archive:
         for source_file in sorted(source_directory.rglob("*")):
             if source_file.is_file():
-                archive.write(source_file, source_file.relative_to(source_directory.parent))
+                archive_name = source_file.relative_to(source_directory.parent).as_posix()
+                archive_info = zipfile.ZipInfo(archive_name, date_time=(1980, 1, 1, 0, 0, 0))
+                archive_info.compress_type = zipfile.ZIP_DEFLATED
+                archive_info.create_system = 3
+                archive_info.external_attr = source_file.stat().st_mode << 16
+                archive.writestr(archive_info, source_file.read_bytes())
 
 
 def copy_metadata(addon_directory, destination):
@@ -64,7 +68,7 @@ def copy_metadata(addon_directory, destination):
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Build the Eengert Kodi repository")
-    parser.add_argument("--source", required=True, type=Path, help="TMDb Helper source directory")
+    parser.add_argument("--source", required=True, type=Path, help="Kodi add-on source directory")
     parser.add_argument("--version", required=True, help="Numeric x.y.z package version")
     parser.add_argument(
         "--repository-root",
@@ -86,14 +90,15 @@ def main():
         raise SystemExit(f"No addon.xml found in {source}")
 
     source_tree = ElementTree.parse(source / "addon.xml")
-    if source_tree.getroot().get("id") != ADDON_ID:
-        raise SystemExit(f"Source addon id must be {ADDON_ID}")
+    addon_id = source_tree.getroot().get("id")
+    if not addon_id or addon_id == REPOSITORY_ID:
+        raise SystemExit("Source addon.xml must contain a non-repository addon id")
 
     repository_source = repository_root / REPOSITORY_ID
     repository_tree = ElementTree.parse(repository_source / "addon.xml")
     repository_version = repository_tree.getroot().get("version")
     output_root = repository_root / "omega" / "zips"
-    addon_output = output_root / ADDON_ID
+    addon_output = output_root / addon_id
     repository_output = output_root / REPOSITORY_ID
     root_repository_zip = repository_root / f"{REPOSITORY_ID}-{repository_version}.zip"
 
@@ -110,14 +115,14 @@ def main():
 
     with tempfile.TemporaryDirectory(prefix="kodi-repository-") as temporary_directory:
         build_root = Path(temporary_directory)
-        addon_build = build_root / ADDON_ID
+        addon_build = build_root / addon_id
         shutil.copytree(source, addon_build, ignore=ignored_files)
 
         packaged_tree = ElementTree.parse(addon_build / "addon.xml")
         packaged_tree.getroot().set("version", args.version)
         write_xml(packaged_tree, addon_build / "addon.xml")
 
-        addon_zip = addon_output / f"{ADDON_ID}-{args.version}.zip"
+        addon_zip = addon_output / f"{addon_id}-{args.version}.zip"
         create_zip(addon_build, addon_zip)
         copy_metadata(addon_build, addon_output)
 
@@ -128,7 +133,10 @@ def main():
 
     addons_root = ElementTree.Element("addons")
     addons_root.append(ElementTree.parse(repository_source / "addon.xml").getroot())
-    addons_root.append(ElementTree.parse(addon_output / "addon.xml").getroot())
+    for metadata_path in sorted(output_root.glob("*/addon.xml")):
+        addon_root = ElementTree.parse(metadata_path).getroot()
+        if addon_root.get("id") != REPOSITORY_ID:
+            addons_root.append(addon_root)
     addons_path = output_root / "addons.xml"
     output_root.mkdir(parents=True, exist_ok=True)
     write_xml(ElementTree.ElementTree(addons_root), addons_path)
