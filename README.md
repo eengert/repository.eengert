@@ -1,6 +1,6 @@
 # Eengert Kodi Repository
 
-Personal Kodi repository for maintained builds of TMDb Helper.
+Personal Kodi repository for maintained add-ons and builds.
 
 ## Kodi File Manager source
 
@@ -11,6 +11,19 @@ https://eengert.github.io/repository.eengert/
 In Kodi, add that URL as a File Manager source, install
 `repository.eengert-1.0.0.zip`, then open **Install from repository** and choose
 **Eengert Repository**.
+
+## Arctic Fuse 3 Patch Service
+
+Install **Arctic Fuse 3 Patch Service** from **Services** in the Eengert
+Repository. Kodi will then receive future service versions through the normal
+repository update mechanism.
+
+The service preserves these local Arctic Fuse 3 customizations after skin
+updates:
+
+- configurable Top-menu Up action (Submenu or Options)
+- Home startup/reload focus-transition workaround
+- horizontal Top-menu `Icon + Text` presentation
 
 ## Publishing a TMDb Helper build
 
