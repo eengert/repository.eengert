@@ -73,4 +73,19 @@
       <license>MIT</license>
     </extension>
   </addon>
+  <addon id="service.skinsettings.backup" name="Skin Settings Backup" version="1.0.0" provider-name="eengert">
+    <requires>
+      <import addon="xbmc.python" version="3.0.1" />
+    </requires>
+    <extension point="xbmc.service" library="service.py" />
+    <extension point="xbmc.python.script" library="default.py">
+      <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">Small, versioned backups of your skin settings.</summary>
+      <description lang="en_GB">Back up skin settings on demand or on a schedule to a local folder or writable Kodi network share. Includes Arctic Fuse 3 menus, widgets, views and skin profiles. Verified archives, protected snapshots and recoverable restores.</description>
+      <platform>all</platform>
+      <license>MIT</license>
+    </extension>
+  </addon>
 </addons>
