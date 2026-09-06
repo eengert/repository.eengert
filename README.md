@@ -52,6 +52,13 @@ Run the **Publish Kodi repository** workflow and provide:
 The workflow changes the version only in a temporary packaging copy. It never
 modifies the source branch used for an upstream pull request.
 
+The repository builder accepts an already-built Kodi add-on ZIP through
+`--source` and treats that as the preferred input. It also accepts a source
+checkout as a fallback, while excluding common development files such as Git
+metadata, test directories, source image files, and local build configuration.
+ZIP paths and source symlinks are validated before any published artifacts are
+replaced.
+
 ## TMDb Helper player bundle
 
 Use the following URL in TMDb Helper's **Players URL** setting:

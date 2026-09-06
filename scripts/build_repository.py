@@ -4,9 +4,11 @@ import argparse
 import hashlib
 import re
 import shutil
+import stat
 import tempfile
 import zipfile
 from pathlib import Path
+from pathlib import PurePosixPath
 from xml.etree import ElementTree
 
 
@@ -15,17 +17,44 @@ VERSION_PATTERN = re.compile(r"^\d+\.\d+\.\d+$")
 IGNORED_NAMES = {
     ".git",
     ".github",
+    ".gitignore",
     ".DS_Store",
     "__pycache__",
     ".pytest_cache",
     ".ruff_cache",
+    ".mypy_cache",
+    ".tox",
+    ".venv",
+    ".idea",
+    ".vscode",
+    ".coverage",
+    "coverage.xml",
+    "build",
+    "dist",
+    "docs",
+    "scripts",
+    "tests",
+    "test",
+    "testing",
+    "Makefile",
+    "pyproject.toml",
+    "pytest.ini",
+    "tox.ini",
 }
+IGNORED_SUFFIXES = (".pyc", ".pyo", ".xcf", ".psd", ".blend")
+IGNORED_FILENAMES = {"dummy.mp4"}
 
 
 def ignored_files(_directory, names):
     return [
         name for name in names
-        if name in IGNORED_NAMES or name.endswith((".pyc", ".pyo"))
+        if (
+            name in IGNORED_NAMES
+            or name in IGNORED_FILENAMES
+            or name.startswith(".coverage.")
+            or name.endswith(IGNORED_SUFFIXES)
+            or name.endswith(".egg-info")
+        )
     ]
 
 
@@ -66,9 +95,87 @@ def copy_metadata(addon_directory, destination):
         shutil.copy2(source_file, destination_file)
 
 
+def validate_directory_source(source):
+    """Reject symlinks so a source checkout cannot package files outside it."""
+    if source.is_symlink():
+        raise SystemExit(f"Source must be a directory or ZIP file, not a symlink: {source}")
+    for source_file in source.rglob("*"):
+        if source_file.is_symlink():
+            raise SystemExit(f"Source contains an unsupported symlink: {source_file}")
+
+
+def extract_addon_zip(source_zip, destination):
+    """Extract one Kodi add-on ZIP and return the directory containing addon.xml."""
+    destination.mkdir(parents=True, exist_ok=True)
+    seen_names = set()
+    try:
+        with zipfile.ZipFile(source_zip) as archive:
+            for member in archive.infolist():
+                member_path = PurePosixPath(member.filename)
+                raw_parts = member.filename.split("/")
+                if (
+                    not member.filename
+                    or member.filename.startswith("/")
+                    or "\\" in member.filename
+                    or any(not part for part in raw_parts[:-1])
+                    or any(part in ("", ".", "..") for part in member_path.parts)
+                ):
+                    raise SystemExit(f"Unsafe path in add-on ZIP: {member.filename!r}")
+                if member.filename in seen_names:
+                    raise SystemExit(f"Duplicate path in add-on ZIP: {member.filename!r}")
+                seen_names.add(member.filename)
+                mode = member.external_attr >> 16
+                if stat.S_ISLNK(mode):
+                    raise SystemExit(f"Symlinks are not allowed in add-on ZIPs: {member.filename!r}")
+                target = destination.joinpath(*member_path.parts)
+                target.parent.mkdir(parents=True, exist_ok=True)
+                if member.is_dir():
+                    target.mkdir(exist_ok=True)
+                else:
+                    with archive.open(member) as source_file, target.open("wb") as target_file:
+                        shutil.copyfileobj(source_file, target_file)
+    except zipfile.BadZipFile as error:
+        raise SystemExit(f"Invalid add-on ZIP: {source_zip}") from error
+
+    candidates = []
+    for addon_xml in destination.rglob("addon.xml"):
+        try:
+            addon_id = ElementTree.parse(addon_xml).getroot().get("id")
+        except ElementTree.ParseError as error:
+            raise SystemExit(f"Invalid addon.xml in {source_zip}: {error}") from error
+        if addon_id and addon_xml.parent.name == addon_id:
+            candidates.append(addon_xml.parent)
+    if len(candidates) != 1:
+        raise SystemExit(
+            f"Add-on ZIP must contain exactly one top-level addon.xml; found {len(candidates)}"
+        )
+    return candidates[0]
+
+
+def prepare_source(source, staging_root):
+    """Materialize a directory or packaged ZIP as a validated add-on directory."""
+    if source.is_symlink():
+        raise SystemExit(f"Source must be a real directory or ZIP file: {source}")
+    if source.is_file():
+        if source.suffix.lower() != ".zip":
+            raise SystemExit(f"Source file must be an add-on ZIP: {source}")
+        return extract_addon_zip(source, staging_root / "archive")
+    if source.is_dir():
+        validate_directory_source(source)
+        addon_build = staging_root / source.name
+        shutil.copytree(source, addon_build, ignore=ignored_files)
+        return addon_build
+    raise SystemExit(f"Source path does not exist: {source}")
+
+
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Build the Eengert Kodi repository")
-    parser.add_argument("--source", required=True, type=Path, help="Kodi add-on source directory")
+    parser.add_argument(
+        "--source",
+        required=True,
+        type=Path,
+        help="Already-built Kodi add-on ZIP (preferred), or source directory",
+    )
     parser.add_argument("--version", required=True, help="Numeric x.y.z package version")
     parser.add_argument(
         "--repository-root",
@@ -86,37 +193,36 @@ def main():
 
     if not VERSION_PATTERN.fullmatch(args.version):
         raise SystemExit("Version must contain exactly three numeric components, for example 6.16.900")
-    if not (source / "addon.xml").is_file():
-        raise SystemExit(f"No addon.xml found in {source}")
-
-    source_tree = ElementTree.parse(source / "addon.xml")
-    addon_id = source_tree.getroot().get("id")
-    if not addon_id or addon_id == REPOSITORY_ID:
-        raise SystemExit("Source addon.xml must contain a non-repository addon id")
-
     repository_source = repository_root / REPOSITORY_ID
     repository_tree = ElementTree.parse(repository_source / "addon.xml")
     repository_version = repository_tree.getroot().get("version")
     output_root = repository_root / "omega" / "zips"
-    addon_output = output_root / addon_id
     repository_output = output_root / REPOSITORY_ID
     root_repository_zip = repository_root / f"{REPOSITORY_ID}-{repository_version}.zip"
 
-    for generated_directory in (addon_output, repository_output):
-        if generated_directory.exists():
-            shutil.rmtree(generated_directory)
-    for generated_file in (
-        output_root / "addons.xml",
-        output_root / "addons.xml.md5",
-        root_repository_zip,
-    ):
-        if generated_file.exists():
-            generated_file.unlink()
-
     with tempfile.TemporaryDirectory(prefix="kodi-repository-") as temporary_directory:
         build_root = Path(temporary_directory)
+        addon_source = prepare_source(source, build_root)
+        source_tree = ElementTree.parse(addon_source / "addon.xml")
+        addon_id = source_tree.getroot().get("id")
+        if not addon_id or addon_id == REPOSITORY_ID:
+            raise SystemExit("Source addon.xml must contain a non-repository addon id")
+        addon_output = output_root / addon_id
+
+        for generated_directory in (addon_output, repository_output):
+            if generated_directory.exists():
+                shutil.rmtree(generated_directory)
+        for generated_file in (
+            output_root / "addons.xml",
+            output_root / "addons.xml.md5",
+            root_repository_zip,
+        ):
+            if generated_file.exists():
+                generated_file.unlink()
+
         addon_build = build_root / addon_id
-        shutil.copytree(source, addon_build, ignore=ignored_files)
+        if addon_source != addon_build:
+            shutil.copytree(addon_source, addon_build, ignore=ignored_files)
 
         packaged_tree = ElementTree.parse(addon_build / "addon.xml")
         packaged_tree.getroot().set("version", args.version)
