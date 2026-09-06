@@ -73,7 +73,7 @@
       <license>MIT</license>
     </extension>
   </addon>
-  <addon id="service.skinsettings.backup" name="Skin Settings Backup" version="1.0.2" provider-name="eengert">
+  <addon id="service.skinsettings.backup" name="Skin Settings Backup" version="1.0.3" provider-name="eengert">
     <requires>
       <import addon="xbmc.python" version="3.0.1" />
     </requires>
