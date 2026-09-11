@@ -61,7 +61,7 @@
       </assets>
     </extension>
   </addon>
-  <addon id="script.backup.pro" name="Backup Pro" version="0.9.10" provider-name="robweber, eengert">
+  <addon id="script.backup.pro" name="Backup Pro" version="0.9.11" provider-name="robweber, eengert">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
       <import addon="script.module.dateutil" version="2.8.0" />
@@ -84,12 +84,11 @@
         <screenshot>resources/images/screenshot3.jpg</screenshot>
         <screenshot>resources/images/screenshot4.jpg</screenshot>
       </assets>
-      <news>Version 0.9.10
-Backup failures are now tracked per-file and reported in a clear,
-persistent dialog instead of a vague toast; a successful backup shows
-a matching persistent confirmation. Status now correctly reflects your
-real backup history. Backup setting names are clearer, and Help has
-been rewritten as organized, friendly sections.
+      <news>Version 0.9.11
+Improves restore completion handling: the final restore confirmation
+could be dismissed early by a delayed Arctic Fuse 3 skin refresh
+after a restore. Completion is now confirmed to stay stable for a
+few seconds before the final dialog is shown.
 </news>
       <summary lang="ar_SA">إنسخ إحتياطياً قاعده بيانات إكس بى إم سى وملفات اﻹعدادات فى حاله وقوع إنهيار مع إمكانيه اﻹسترجاع</summary>
       <summary lang="bg_BG">Добавката може да създава резервни копия и възстановява базата данни и настройките на Kodi, в случай на срив или повреда на файловете.</summary>
