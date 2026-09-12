@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<addon id="script.backup.pro" name="Backup Pro" version="0.9.17" provider-name="robweber, eengert">
+<addon id="script.backup.pro" name="Backup Pro" version="0.9.18" provider-name="robweber, eengert">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="script.module.dateutil" version="2.8.0" />
@@ -22,13 +22,12 @@
       <screenshot>resources/images/screenshot3.jpg</screenshot>
       <screenshot>resources/images/screenshot4.jpg</screenshot>
     </assets>
-    <news>Version 0.9.17
-Fixed a bug where an unconfigured/empty backup destination was not
-detected: an empty path setting silently normalized to "/", so Backup
-Pro treated it as configured and attempted to write there. Backup and
-Restore now correctly detect an empty destination and stop cleanly
-before any remote operation, showing the destination-not-configured
-message instead.
+    <news>Version 0.9.18
+Restore now clearly reports when it is preparing, copying, verifying,
+and extracting a compressed backup before any files are restored.
+The restore-set chooser now uses human-readable labels instead of
+internal set names. Internal restore IDs and compatibility with existing
+Backup Pro archives are unchanged.
 </news>
     <summary lang="ar_SA">إنسخ إحتياطياً قاعده بيانات إكس بى إم سى وملفات اﻹعدادات فى حاله وقوع إنهيار مع إمكانيه اﻹسترجاع</summary>
     <summary lang="bg_BG">Добавката може да създава резервни копия и възстановява базата данни и настройките на Kodi, в случай на срив или повреда на файловете.</summary>
