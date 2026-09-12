@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<addon id="script.backup.pro" name="Backup Pro" version="0.9.20" provider-name="robweber, eengert">
+<addon id="script.backup.pro" name="Backup Pro" version="0.9.21" provider-name="robweber, eengert">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="script.module.dateutil" version="2.8.0" />
@@ -22,7 +22,13 @@
       <screenshot>resources/images/screenshot3.jpg</screenshot>
       <screenshot>resources/images/screenshot4.jpg</screenshot>
     </assets>
-    <news>Version 0.9.20
+    <news>Version 0.9.21
+Improved handling of byte-identical case-only source aliases when Kodi VFS
+reports inconsistent hashes. An independent local-file comparison is used
+only as a safe fallback; genuinely different or unverifiable collisions
+still fail closed.
+
+Version 0.9.20
 Compressed restores now show real byte-level progress while staging
 archives through Kodi's VFS, with honest unknown-progress messaging for
 sources that cannot report incremental progress. The refreshed Backup Pro
