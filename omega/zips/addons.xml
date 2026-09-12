@@ -61,7 +61,7 @@
       </assets>
     </extension>
   </addon>
-  <addon id="script.backup.pro" name="Backup Pro" version="0.9.22" provider-name="robweber, eengert">
+  <addon id="script.backup.pro" name="Backup Pro" version="0.9.23" provider-name="robweber, eengert">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
       <import addon="script.module.dateutil" version="2.8.0" />
@@ -84,7 +84,14 @@
         <screenshot>resources/images/screenshot3.jpg</screenshot>
         <screenshot>resources/images/screenshot4.jpg</screenshot>
       </assets>
-      <news>Version 0.9.22
+      <news>Version 0.9.23
+Guards tvOS settings against use after add-on changes: Backup Pro now
+detects an unsafe session (stale/default settings possible after
+add-on install/uninstall/update on tvOS) and blocks settings-dependent
+actions instead of acting on stale values, prompting a one-time restart
+when needed.
+
+Version 0.9.22
 Added diagnostic logging for tvOS case-collision verification, including VFS
 and native fallback details. This release does not claim to fix the underlying
 compatibility issue; collision handling remains fail-closed.
