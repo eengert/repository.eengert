@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<addon id="script.backup.pro" name="Backup Pro" version="0.9.14" provider-name="robweber, eengert">
+<addon id="script.backup.pro" name="Backup Pro" version="0.9.15" provider-name="robweber, eengert">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="script.module.dateutil" version="2.8.0" />
@@ -22,11 +22,11 @@
       <screenshot>resources/images/screenshot3.jpg</screenshot>
       <screenshot>resources/images/screenshot4.jpg</screenshot>
     </assets>
-    <news>Version 0.9.14
-Improves the compressed-backup progress dialog: it now shows clear,
-honest messaging instead of a misleading frozen remaining-byte
-countdown, and no longer leaves a stale dialog visible after the
-final success or failure dialog.
+    <news>Version 0.9.15
+Fixes first launch on a fresh installation when Backup Pro's profile
+directory has not been created yet. Pending-restore inspection now
+treats that normal condition as no pending restore while retaining
+the existing write-path and symlink safety checks.
 </news>
     <summary lang="ar_SA">إنسخ إحتياطياً قاعده بيانات إكس بى إم سى وملفات اﻹعدادات فى حاله وقوع إنهيار مع إمكانيه اﻹسترجاع</summary>
     <summary lang="bg_BG">Добавката може да създава резервни копия и възстановява базата данни и настройките на Kodi, в случай на срив или повреда на файловете.</summary>
