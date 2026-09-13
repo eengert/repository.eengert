@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<addon id="script.backup.pro" name="Backup Pro" version="0.9.27" provider-name="robweber, eengert">
+<addon id="script.backup.pro" name="Backup Pro" version="0.9.28" provider-name="robweber, eengert">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="script.module.dateutil" version="2.8.0" />
@@ -22,7 +22,13 @@
       <screenshot>resources/images/screenshot3.jpg</screenshot>
       <screenshot>resources/images/screenshot4.jpg</screenshot>
     </assets>
-    <news>Version 0.9.27
+    <news>Version 0.9.28
+Fixed an Apple TV timing issue where Backup Pro's background service could
+initialize after a Program action had begun and incorrectly mark the session
+unsafe. Settings-dependent operations now synchronize with service safety
+initialization before planning work begins.
+
+Version 0.9.27
 Added diagnostic logging for Apple TV operation-boundary settings views and
 settings-safeguard decisions. This release does not change backup behavior.
 
