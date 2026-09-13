@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<addon id="script.backup.pro" name="Backup Pro" version="0.9.31" provider-name="robweber, eengert">
+<addon id="script.backup.pro" name="Backup Pro" version="0.9.32" provider-name="robweber, eengert">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="script.module.dateutil" version="2.8.0" />
@@ -22,7 +22,11 @@
       <screenshot>resources/images/screenshot3.jpg</screenshot>
       <screenshot>resources/images/screenshot4.jpg</screenshot>
     </assets>
-    <news>Version 0.9.31
+    <news>Version 0.9.32
+Apple TV safety cancellation now stops and cleans up incomplete backup staging
+cleanly instead of continuing into archive verification or upload.
+
+Version 0.9.31
 Backup Pro now captures one coherent settings snapshot per backup operation,
 so Apple TV settings changes during long backup preparation cannot alter the
 in-flight backup plan.
