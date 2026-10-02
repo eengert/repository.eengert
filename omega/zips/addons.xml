@@ -61,7 +61,7 @@
       </assets>
     </extension>
   </addon>
-  <addon id="script.backup.pro" name="Backup Pro" version="0.9.36" provider-name="robweber, eengert">
+  <addon id="script.backup.pro" name="Backup Pro" version="0.9.37" provider-name="robweber, eengert">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
       <import addon="script.module.dateutil" version="2.8.0" />
@@ -84,7 +84,12 @@
         <screenshot>resources/images/screenshot3.jpg</screenshot>
         <screenshot>resources/images/screenshot4.jpg</screenshot>
       </assets>
-      <news>Version 0.9.36
+      <news>Version 0.9.37
+Improved backup reliability for active Kodi and add-on SQLite databases.
+Live databases are snapshotted before archiving, including committed WAL
+data in a consistent snapshot. Improved archive verification diagnostics.
+
+Version 0.9.36
 On Apple TV/tvOS, a due scheduled backup can now safely recover after a
 silent Backup Pro update when a fresh settings view is independently
 validated against trusted pre-update state. Interactive Backup Pro
