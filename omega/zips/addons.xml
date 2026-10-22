@@ -277,6 +277,22 @@ Backup Pro archives are unchanged.
       <license>MIT</license>
     </extension>
   </addon>
+  <addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.0.4">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+    </requires>
+    <extension point="xbmc.service" library="service.py" start="startup" />
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">Keeps the Red Light loading-screen style after Red Light updates.</summary>
+      <description lang="en_GB">Reapplies a thin rounded cyan-blue progress bar and hides provider, source and filename text on Red Light's playback loading screen. Each change is applied only when the known stock layout is present, so an unrecognised Red Light layout is left untouched.</description>
+      <platform>all</platform>
+      <license>MIT</license>
+      <assets>
+        <icon>icon.png</icon>
+      </assets>
+      <news>1.0.4: Scrape and resolve split the bar at 50%, matched to a 10 s results timeout. Replaces the 1.0.0 to 1.0.3 bars in place. Covers Red Light 2.6.8, 2.7.8 and 2.8.9 loading-screen layouts.</news>
+    </extension>
+  </addon>
   <addon id="service.skinsettings.backup" name="Skin Settings Backup" version="1.0.16" provider-name="eengert">
     <requires>
       <import addon="xbmc.python" version="3.0.1" />
