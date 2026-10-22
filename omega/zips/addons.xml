@@ -277,7 +277,7 @@ Backup Pro archives are unchanged.
       <license>MIT</license>
     </extension>
   </addon>
-  <addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.3.0">
+  <addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.5.0">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
     </requires>
@@ -290,7 +290,7 @@ Backup Pro archives are unchanged.
       <assets>
         <icon>icon.png</icon>
       </assets>
-      <news>1.3.0: Stops hiding the episode synopsis, so Red Light's Show Plot setting decides. Adds space between the spinner, the source counts and the title. Upgrades earlier versions in place. Covers Red Light 2.6.8, 2.7.8 and 2.8.9 loading-screen layouts.</news>
+      <news>1.5.0: Hides the Red Light logo in the upper-left corner. Gives the spinner and source counts more room. Moves the resolve-screen title into the space the counts use. Hides Red Light's busy spinner and adds a pulsing centre to the spinner. Upgrades earlier versions in place. Covers Red Light 2.6.8, 2.7.8 and 2.8.9 loading-screen layouts.</news>
     </extension>
   </addon>
   <addon id="service.skinsettings.backup" name="Skin Settings Backup" version="1.0.16" provider-name="eengert">
