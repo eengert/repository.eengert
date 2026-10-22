@@ -277,20 +277,21 @@ Backup Pro archives are unchanged.
       <license>MIT</license>
     </extension>
   </addon>
-  <addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.5.0">
+  <addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.6.0">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
     </requires>
     <extension point="xbmc.service" library="service.py" start="startup" />
     <extension point="xbmc.addon.metadata">
-      <summary lang="en_GB">Keeps the Red Light loading-screen style after Red Light updates.</summary>
-      <description lang="en_GB">Reapplies a rotating cyan-blue loading spinner with a pulsing centre, and hides Red Light's busy spinner and provider, source and filename text on its playback loading screen. Each change is applied only when the known stock layout is present, so an unrecognised Red Light layout is left untouched.</description>
+      <summary lang="en_GB">Keeps the Red Light loading-screen and Autoplay Next Episode styles after Red Light updates.</summary>
+      <description lang="en_GB">Reapplies a rotating cyan-blue loading spinner with a pulsing centre, and hides Red Light's busy spinner and provider, source and filename text on its playback loading screen. Moves the Autoplay Next Episode popup to a compact box in the lower-right corner, without its thumbnail, logo or Close button. Each change is applied only when the known stock layout is present, so an unrecognised Red Light layout is left untouched.</description>
       <platform>all</platform>
       <license>MIT</license>
       <assets>
         <icon>icon.png</icon>
       </assets>
-      <news>1.5.0: Hides the Red Light logo in the upper-left corner. Gives the spinner and source counts more room. Moves the resolve-screen title into the space the counts use. Hides Red Light's busy spinner and adds a pulsing centre to the spinner. Upgrades earlier versions in place. Covers Red Light 2.6.8, 2.7.8 and 2.8.9 loading-screen layouts.</news>
+      <news>1.6.0: Moves the Autoplay Next Episode popup to a compact box in the lower-right corner. Removes its thumbnail, Red Light logo and Close button. Keeps Play, Cancel and the countdown. Upgrades earlier versions in place. Covers Red Light 2.6.8, 2.7.8 and 2.8.9 layouts.
+1.5.0: Hides the Red Light logo in the upper-left corner. Gives the spinner and source counts more room. Moves the resolve-screen title into the space the counts use. Hides Red Light's busy spinner and adds a pulsing centre to the spinner. Upgrades earlier versions in place. Covers Red Light 2.6.8, 2.7.8 and 2.8.9 loading-screen layouts.</news>
     </extension>
   </addon>
   <addon id="service.skinsettings.backup" name="Skin Settings Backup" version="1.0.16" provider-name="eengert">
