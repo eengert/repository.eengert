@@ -277,7 +277,7 @@ Backup Pro archives are unchanged.
       <license>MIT</license>
     </extension>
   </addon>
-  <addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.6.4">
+  <addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.6.5">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
     </requires>
@@ -290,7 +290,8 @@ Backup Pro archives are unchanged.
       <assets>
         <icon>icon.png</icon>
       </assets>
-      <news>1.6.4: The popup is 20% taller. Its background is 70% opaque. Both buttons are 20% taller, and Cancel is 20% wider. Upgrades 1.6.0 to 1.6.3 in place.
+      <news>1.6.5: The popup is 25% wider, with more space above the buttons. Play and Cancel are the same size, 10% narrower and 10% taller. Upgrades 1.6.0 to 1.6.4 in place.
+1.6.4: The popup is 20% taller. Its background is 70% opaque. Both buttons are 20% taller, and Cancel is 20% wider. Upgrades 1.6.0 to 1.6.3 in place.
 1.6.3: The popup is 40% wider and 10% taller, with buttons 40% wider so their labels fit. The outline is 1 px and 70% opaque. Upgrades 1.6.0 to 1.6.2 in place.
 1.6.2: The popup background is 30% opaque, so more of the video shows through. Upgrades 1.6.0 and 1.6.1 in place.
 1.6.1: Enlarges the Autoplay Next Episode popup, rounds its corners and gives it a 2 px aqua border. The header uses a smaller font. Upgrades 1.6.0 in place.
