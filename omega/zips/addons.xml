@@ -277,7 +277,7 @@ Backup Pro archives are unchanged.
       <license>MIT</license>
     </extension>
   </addon>
-  <addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.6.17">
+  <addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.6.18">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
     </requires>
@@ -290,7 +290,8 @@ Backup Pro archives are unchanged.
       <assets>
         <icon>icon.png</icon>
       </assets>
-      <news>1.6.17: The header and episode text lines are back at their original position. Only the Play and Cancel buttons are centred. Upgrades 1.6.0 to 1.6.16 in place.
+      <news>1.6.18: The source count numbers sit 10 px closer to their headers. Upgrades every earlier layout in place.
+1.6.17: The header and episode text lines are back at their original position. Only the Play and Cancel buttons are centred. Upgrades 1.6.0 to 1.6.16 in place.
 1.6.16: The popup buttons are centred horizontally, with 13 px between them. The gap above the buttons is 30 px, and the box is 165 px tall. Upgrades 1.6.0 to 1.6.15 in place.
 1.6.15: The Autoplay Next Episode popup sits 10 px from the right and bottom edges of the screen, down from 30 px. Upgrades 1.6.0 to 1.6.14 in place.
 1.6.14: The Autoplay Next Episode popup box is 175 px tall, and both buttons are 50 px tall. Upgrades 1.6.0 to 1.6.12 in place.
