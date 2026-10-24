@@ -277,7 +277,7 @@ Backup Pro archives are unchanged.
       <license>MIT</license>
     </extension>
   </addon>
-  <addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.7.1">
+  <addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.7.2">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
     </requires>
@@ -290,7 +290,8 @@ Backup Pro archives are unchanged.
       <assets>
         <icon>icon.png</icon>
       </assets>
-      <news>1.7.1: The loading-screen spinner's arc turns clockwise. 1.6.13 to 1.7.0 turned it counter-clockwise. Upgrades those spinners in place.
+      <news>1.7.2: The unfocused Cancel and Play outlines in the Autoplay Next Episode popup are soft-edged, so they look smooth on Kodi scaling. Upgrades 1.6.0 to 1.7.1 in place.
+1.7.1: The loading-screen spinner's arc turns clockwise. 1.6.13 to 1.7.0 turned it counter-clockwise. Upgrades those spinners in place.
 1.7.0: Stable release of the multi-device-tested loading screen and Autoplay Next Episode styles, incorporating the 1.6.14-1.6.18 refinements. No styling or playback behavior changes.
 1.6.18: The source count numbers sit 10 px closer to their headers. Upgrades every earlier layout in place.
 1.6.17: The header and episode text lines are back at their original position. Only the Play and Cancel buttons are centred. Upgrades 1.6.0 to 1.6.16 in place.
