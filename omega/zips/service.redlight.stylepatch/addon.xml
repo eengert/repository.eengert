@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.7.2">
+<addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.7.3">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
   </requires>
@@ -12,7 +12,8 @@
     <assets>
       <icon>icon.png</icon>
     </assets>
-    <news>1.7.2: The unfocused Cancel and Play outlines in the Autoplay Next Episode popup are soft-edged, so they look smooth on Kodi scaling. Upgrades 1.6.0 to 1.7.1 in place.
+    <news>1.7.3: The service logs a line when it starts, so a Kodi log shows that it is running. No patch changes.
+1.7.2: The unfocused Cancel and Play outlines in the Autoplay Next Episode popup are soft-edged, so they look smooth on Kodi scaling. Upgrades 1.6.0 to 1.7.1 in place.
 1.7.1: The loading-screen spinner's arc turns clockwise. 1.6.13 to 1.7.0 turned it counter-clockwise. Upgrades those spinners in place.
 1.7.0: Stable release of the multi-device-tested loading screen and Autoplay Next Episode styles, incorporating the 1.6.14-1.6.18 refinements. No styling or playback behavior changes.
 1.6.18: The source count numbers sit 10 px closer to their headers. Upgrades every earlier layout in place.
