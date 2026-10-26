@@ -265,6 +265,24 @@ Backup Pro archives are unchanged.
       <description lang="zh_CN">你是否经常折腾你的 Kodi，因而希望能够有个备份？现在可以通过简单点击来实现。你可以把资料库、播放列表、缩略图、插件和其他配置细节导出到 Kodi 可以写入的任意位置或 Dropgox 云存储空间。备份可以按需运行或通过计划任务执行。 </description>
     </extension>
   </addon>
+  <addon id="script.redlight.testpopup" name="Test RedLight Autoplay Popup" provider-name="Eric" version="1.0.0">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+    </requires>
+    <extension point="xbmc.python.script" library="default.py">
+      <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">Shows the Red Light Autoplay Next Episode popup with dummy details.</summary>
+      <description lang="en_GB">Opens Red Light's Autoplay Next Episode popup with dummy show and episode details, so its style can be checked without playing an episode. The buttons only close the popup, and Back or Escape also closes it. Needs Red Light to be installed.</description>
+      <platform>all</platform>
+      <license>MIT</license>
+      <assets>
+        <icon>icon.png</icon>
+      </assets>
+      <news>1.0.0: First release. Shows Red Light's Autoplay Next Episode popup with dummy details.</news>
+    </extension>
+  </addon>
   <addon id="service.af3.topupaction" name="Arctic Fuse 3 Patch Service" provider-name="Eric / ChatGPT" version="1.3.10">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
