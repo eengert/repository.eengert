@@ -1,18 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.7.4">
+<addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.7.5">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
   </requires>
   <extension point="xbmc.service" library="service.py" start="startup" />
   <extension point="xbmc.addon.metadata">
     <summary lang="en_GB">Keeps the Red Light loading-screen and Autoplay Next Episode styles after Red Light updates.</summary>
-    <description lang="en_GB">Reapplies a rotating cyan-blue loading spinner with a pulsing centre, and hides Red Light's busy spinner and provider, source and filename text on its playback loading screen. Moves the Autoplay Next Episode popup to a compact box in the lower-right corner, without its thumbnail, logo or Close button. Each change is applied only when the known stock layout is present, so an unrecognised Red Light layout is left untouched.</description>
+    <description lang="en_GB">Reapplies a rotating cyan-blue loading spinner with a pulsing centre, and hides Red Light's busy spinner and provider, source and filename text on its playback loading screen. Moves the Autoplay Next Episode popup to a compact box in the lower-right corner, showing the countdown and any season premiere or finale tag, without its thumbnail, logo, episode title or Close button. Each change is applied only when the known stock layout is present, so an unrecognised Red Light layout is left untouched.</description>
     <platform>all</platform>
     <license>MIT</license>
     <assets>
       <icon>icon.png</icon>
     </assets>
-    <news>1.7.4: Each Red Light check logs one line saying whether the loading screen and popup were reapplied, unchanged or failed. A missing Red Light is logged too. No patch changes.
+    <news>1.7.5: The Autoplay Next Episode popup is a compact 550 x 80 px box in the lower-right corner. It shows the countdown and, when Red Light reports one, the Season Premiere or Season Finale tag, without the episode title. Upgrades the 1.6.0 to 1.7.2 popup layouts in place.
+1.7.4: Each Red Light check logs one line saying whether the loading screen and popup were reapplied, unchanged or failed. A missing Red Light is logged too. No patch changes.
 1.7.3: The service logs a line when it starts, so a Kodi log shows that it is running. No patch changes.
 1.7.2: The unfocused Cancel and Play outlines in the Autoplay Next Episode popup are soft-edged, so they look smooth on Kodi scaling. Upgrades 1.6.0 to 1.7.1 in place.
 1.7.1: The loading-screen spinner's arc turns clockwise. 1.6.13 to 1.7.0 turned it counter-clockwise. Upgrades those spinners in place.
