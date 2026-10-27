@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<addon id="script.redlight.testpopup" name="Test RedLight Autoplay Popup" provider-name="Eric" version="1.0.0">
+<addon id="script.redlight.testpopup" name="Test RedLight Autoplay Popup" provider-name="Eric" version="1.0.1">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
   </requires>
@@ -8,12 +8,13 @@
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en_GB">Shows the Red Light Autoplay Next Episode popup with dummy details.</summary>
-    <description lang="en_GB">Opens Red Light's Autoplay Next Episode popup with dummy show and episode details, so its style can be checked without playing an episode. The buttons only close the popup, and Back or Escape also closes it. Needs Red Light to be installed.</description>
+    <description lang="en_GB">Opens the Autoplay Next Episode popup with dummy show and episode details, so its style can be checked without playing an episode. The buttons only close the popup, and Back or Escape also closes it. Does not need Red Light.</description>
     <platform>all</platform>
     <license>MIT</license>
     <assets>
       <icon>icon.png</icon>
     </assets>
-    <news>1.0.0: First release. Shows Red Light's Autoplay Next Episode popup with dummy details.</news>
+    <news>1.0.1: Opens over a demo background image. The popup has the new layout, 20 px corners, a 1.5 px outline and a drop shadow. The icon is an Autoplay button.
+1.0.0: First release. Shows Red Light's Autoplay Next Episode popup with dummy details.</news>
   </extension>
 </addon>
