@@ -295,7 +295,7 @@ Backup Pro archives are unchanged.
       <license>MIT</license>
     </extension>
   </addon>
-  <addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.7.6">
+  <addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.7.7">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
     </requires>
@@ -308,7 +308,8 @@ Backup Pro archives are unchanged.
       <assets>
         <icon>icon.png</icon>
       </assets>
-      <news>1.7.6: The Autoplay Next Episode popup box is 88 px tall, with 25 px padding on the left and right and 4 px more above and below the contents. It sits 2 px from the right edge and 4 px from the bottom. Upgrades the 1.6.0 to 1.7.5 popup layouts in place.
+      <news>1.7.7: The Autoplay Next Episode popup box is 592 px wide, up from 550, so the countdown is no longer cut off. The text column is 252 px wide, and the buttons keep 25 px from the right edge. Upgrades the 1.6.0 to 1.7.6 popup layouts in place.
+1.7.6: The Autoplay Next Episode popup box is 88 px tall, with 25 px padding on the left and right and 4 px more above and below the contents. It sits 2 px from the right edge and 4 px from the bottom. Upgrades the 1.6.0 to 1.7.5 popup layouts in place.
 1.7.5: The Autoplay Next Episode popup is a compact 550 x 80 px box in the lower-right corner. It shows the countdown and, when Red Light reports one, the Season Premiere or Season Finale tag, without the episode title. Upgrades the 1.6.0 to 1.7.2 popup layouts in place.
 1.7.4: Each Red Light check logs one line saying whether the loading screen and popup were reapplied, unchanged or failed. A missing Red Light is logged too. No patch changes.
 1.7.3: The service logs a line when it starts, so a Kodi log shows that it is running. No patch changes.
