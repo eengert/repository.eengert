@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.7.8">
+<addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.7.9">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
   </requires>
@@ -10,9 +10,10 @@
     <platform>all</platform>
     <license>MIT</license>
     <assets>
-      <icon>icon.png</icon>
+      <icon>icon-spinner.png</icon>
     </assets>
-    <news>1.7.8: The Autoplay Next Episode popup has 20 px rounded corners, a 1.5 px outline a little lighter than before, and a soft drop shadow. It sits 6 px from the right edge and 8 px from the bottom. The add-on icon is the loading-screen spinner on a square tile. Upgrades the 1.6.0 to 1.7.7 popup layouts in place.
+    <news>1.7.9: The add-on icon has a new file name, so Kodi shows the spinner icon on every device. No patch changes.
+1.7.8: The Autoplay Next Episode popup has 20 px rounded corners, a 1.5 px outline a little lighter than before, and a soft drop shadow. It sits 6 px from the right edge and 8 px from the bottom. The add-on icon is the loading-screen spinner on a square tile. Upgrades the 1.6.0 to 1.7.7 popup layouts in place.
 1.7.7: The Autoplay Next Episode popup box is 592 px wide, up from 550, so the countdown is no longer cut off. The text column is 252 px wide, and the buttons keep 25 px from the right edge. Upgrades the 1.6.0 to 1.7.6 popup layouts in place.
 1.7.6: The Autoplay Next Episode popup box is 88 px tall, with 25 px padding on the left and right and 4 px more above and below the contents. It sits 2 px from the right edge and 4 px from the bottom. Upgrades the 1.6.0 to 1.7.5 popup layouts in place.
 1.7.5: The Autoplay Next Episode popup is a compact 550 x 80 px box in the lower-right corner. It shows the countdown and, when Red Light reports one, the Season Premiere or Season Finale tag, without the episode title. Upgrades the 1.6.0 to 1.7.2 popup layouts in place.
