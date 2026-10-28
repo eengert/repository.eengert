@@ -265,7 +265,7 @@ Backup Pro archives are unchanged.
       <description lang="zh_CN">你是否经常折腾你的 Kodi，因而希望能够有个备份？现在可以通过简单点击来实现。你可以把资料库、播放列表、缩略图、插件和其他配置细节导出到 Kodi 可以写入的任意位置或 Dropgox 云存储空间。备份可以按需运行或通过计划任务执行。 </description>
     </extension>
   </addon>
-  <addon id="script.redlight.testpopup" name="Test RedLight Autoplay Popup" provider-name="Eric" version="1.0.3">
+  <addon id="script.redlight.testpopup" name="Test RedLight Autoplay Popup" provider-name="Eric" version="1.0.4">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
     </requires>
@@ -280,7 +280,8 @@ Backup Pro archives are unchanged.
       <assets>
         <icon>icon-autoplay.png</icon>
       </assets>
-      <news>1.0.3: The popup is 602 px wide and 108 px tall, with 30 px padding on the left and right. The shadow and panel follow the new size.
+      <news>1.0.4: The thumbnail sits in the left column with 12 px rounded corners, and the countdown and buttons sit in the right column. The season premiere or finale banner shows on the thumbnail. The popup is 542 px wide and 148 px tall.
+1.0.3: The popup is 602 px wide and 108 px tall, with 30 px padding on the left and right. The shadow and panel follow the new size.
 1.0.2: The add-on icon has a new file name, so Kodi shows the Autoplay icon on every device. No other changes.
 1.0.1: Opens over a demo background image. The popup has the new layout, 20 px corners, a 1.5 px outline and a drop shadow. The icon is an Autoplay button.
 1.0.0: First release. Shows Red Light's Autoplay Next Episode popup with dummy details.</news>
