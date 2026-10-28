@@ -265,7 +265,7 @@ Backup Pro archives are unchanged.
       <description lang="zh_CN">你是否经常折腾你的 Kodi，因而希望能够有个备份？现在可以通过简单点击来实现。你可以把资料库、播放列表、缩略图、插件和其他配置细节导出到 Kodi 可以写入的任意位置或 Dropgox 云存储空间。备份可以按需运行或通过计划任务执行。 </description>
     </extension>
   </addon>
-  <addon id="script.redlight.testpopup" name="Test RedLight Autoplay Popup" provider-name="Eric" version="1.0.5">
+  <addon id="script.redlight.testpopup" name="Test RedLight Autoplay Popup" provider-name="Eric" version="1.0.6">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
     </requires>
@@ -280,7 +280,8 @@ Backup Pro archives are unchanged.
       <assets>
         <icon>icon-autoplay.png</icon>
       </assets>
-      <news>1.0.5: The popup sits 10 px further left and 2 px higher, so it clears the right edge of a TV. The outline is a little lighter and the shadow is a little more transparent.
+      <news>1.0.6: The popup sits 2 px higher again.
+1.0.5: The popup sits 10 px further left and 2 px higher, so it clears the right edge of a TV. The outline is a little lighter and the shadow is a little more transparent.
 1.0.4: The thumbnail sits in the left column with 12 px rounded corners, and the countdown and buttons sit in the right column. The season premiere or finale banner shows on the thumbnail. The popup is 542 px wide and 148 px tall.
 1.0.3: The popup is 602 px wide and 108 px tall, with 30 px padding on the left and right. The shadow and panel follow the new size.
 1.0.2: The add-on icon has a new file name, so Kodi shows the Autoplay icon on every device. No other changes.
@@ -300,7 +301,7 @@ Backup Pro archives are unchanged.
       <license>MIT</license>
     </extension>
   </addon>
-  <addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.7.10">
+  <addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.7.11">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
     </requires>
@@ -313,7 +314,8 @@ Backup Pro archives are unchanged.
       <assets>
         <icon>icon-spinner.png</icon>
       </assets>
-      <news>1.7.10: The Autoplay Next Episode popup is 542 x 148 px. The episode thumbnail sits in the left column with 12 px rounded corners, with the season premiere or finale banner over it when Red Light sets one. The countdown sits above the Play and Cancel buttons in the right column. The popup has 20 px rounded corners, a darker outline and a soft drop shadow. Upgrades the 1.6.0 to 1.7.8 popup layouts in place.
+      <news>1.7.11: The Autoplay Next Episode popup sits 16 px from the right edge and 12 px from the bottom, so it clears the right edge of a TV. The outline is a little lighter and the shadow is a little more transparent.
+1.7.10: The Autoplay Next Episode popup is 542 x 148 px. The episode thumbnail sits in the left column with 12 px rounded corners, with the season premiere or finale banner over it when Red Light sets one. The countdown sits above the Play and Cancel buttons in the right column. The popup has 20 px rounded corners, a darker outline and a soft drop shadow. Upgrades the 1.6.0 to 1.7.8 popup layouts in place.
 1.7.9: The add-on icon has a new file name, so Kodi shows the spinner icon on every device. No patch changes.
 1.7.8: The Autoplay Next Episode popup has 20 px rounded corners, a 1.5 px outline a little lighter than before, and a soft drop shadow. It sits 6 px from the right edge and 8 px from the bottom. The add-on icon is the loading-screen spinner on a square tile. Upgrades the 1.6.0 to 1.7.7 popup layouts in place.
 1.7.7: The Autoplay Next Episode popup box is 592 px wide, up from 550, so the countdown is no longer cut off. The text column is 252 px wide, and the buttons keep 25 px from the right edge. Upgrades the 1.6.0 to 1.7.6 popup layouts in place.
