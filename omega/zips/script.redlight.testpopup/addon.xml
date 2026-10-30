@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<addon id="script.redlight.testpopup" name="Test RedLight Autoplay Popup" provider-name="Eric" version="1.0.6">
+<addon id="script.redlight.testpopup" name="Test RedLight Autoplay Popup" provider-name="Eric" version="1.0.7">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
   </requires>
@@ -14,7 +14,8 @@
     <assets>
       <icon>icon-autoplay.png</icon>
     </assets>
-    <news>1.0.6: The popup sits 2 px higher again.
+    <news>1.0.7: The popup is a card in the Seren Lucent style, 774 x 268 px, 32 px from the right edge and 31 px from the bottom. The heading reads NEXT EPISODE IN with the countdown, then the season and episode and the show title. The Play button is 200 px wide with its icon, and Cancel is 140 px wide. The thumbnail has 17 px corners and the card has 32 px corners.
+1.0.6: The popup sits 2 px higher again.
 1.0.5: The popup sits 10 px further left and 2 px higher, so it clears the right edge of a TV. The outline is a little lighter and the shadow is a little more transparent.
 1.0.4: The thumbnail sits in the left column with 12 px rounded corners, and the countdown and buttons sit in the right column. The season premiere or finale banner shows on the thumbnail. The popup is 542 px wide and 148 px tall.
 1.0.3: The popup is 602 px wide and 108 px tall, with 30 px padding on the left and right. The shadow and panel follow the new size.
