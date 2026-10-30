@@ -1,18 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.7.11">
+<addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.7.12">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
   </requires>
   <extension point="xbmc.service" library="service.py" start="startup" />
   <extension point="xbmc.addon.metadata">
     <summary lang="en_GB">Keeps the Red Light loading-screen and Autoplay Next Episode styles after Red Light updates.</summary>
-    <description lang="en_GB">Reapplies a rotating cyan-blue loading spinner with a pulsing centre, and hides Red Light's busy spinner and provider, source and filename text on its playback loading screen. Moves the Autoplay Next Episode popup to a compact box in the lower-right corner, with the episode thumbnail, any season premiere or finale banner, the countdown and the Play and Cancel buttons. The logo, episode title and Close button are removed. Each change is applied only when the known stock layout is present, so an unrecognised Red Light layout is left untouched.</description>
+    <description lang="en_GB">Reapplies a rotating cyan-blue loading spinner with a pulsing centre, and hides Red Light's busy spinner and provider, source and filename text on its playback loading screen. Moves the Autoplay Next Episode popup to a card in the lower-right corner, with the episode thumbnail, any season premiere or finale banner, the countdown, the season and episode, the show title and the Play and Cancel buttons. The logo, episode title and Close button are removed. Each change is applied only when the known stock layout is present, so an unrecognised Red Light layout is left untouched.</description>
     <platform>all</platform>
     <license>MIT</license>
     <assets>
       <icon>icon-spinner.png</icon>
     </assets>
-    <news>1.7.11: The Autoplay Next Episode popup sits 16 px from the right edge and 12 px from the bottom, so it clears the right edge of a TV. The outline is a little lighter and the shadow is a little more transparent.
+    <news>1.7.12: The Autoplay Next Episode popup is a card 774 x 268 px in size, 32 px from the right edge and 31 px from the bottom, styled after the Lucent playing-next popup in Seren. The heading reads NEXT EPISODE IN with the countdown. Below it are the season and episode and the show title. The thumbnail has 17 px rounded corners and the card has 32 px corners. Play has its icon and is 200 px wide. Red Light's Autoplay Next Episode code is patched to set the season, episode and show title properties. Restart Kodi after updating.
+1.7.11: The Autoplay Next Episode popup sits 16 px from the right edge and 12 px from the bottom, so it clears the right edge of a TV. The outline is a little lighter and the shadow is a little more transparent.
 1.7.10: The Autoplay Next Episode popup is 542 x 148 px. The episode thumbnail sits in the left column with 12 px rounded corners, with the season premiere or finale banner over it when Red Light sets one. The countdown sits above the Play and Cancel buttons in the right column. The popup has 20 px rounded corners, a darker outline and a soft drop shadow. Upgrades the 1.6.0 to 1.7.8 popup layouts in place.
 1.7.9: The add-on icon has a new file name, so Kodi shows the spinner icon on every device. No patch changes.
 1.7.8: The Autoplay Next Episode popup has 20 px rounded corners, a 1.5 px outline a little lighter than before, and a soft drop shadow. It sits 6 px from the right edge and 8 px from the bottom. The add-on icon is the loading-screen spinner on a square tile. Upgrades the 1.6.0 to 1.7.7 popup layouts in place.
