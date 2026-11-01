@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.7.17">
+<addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.7.18">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
   </requires>
@@ -12,7 +12,8 @@
     <assets>
       <icon>icon-spinner.png</icon>
     </assets>
-    <news>1.7.17: The Autoplay Next Episode card sits 9 px from the right edge and 9 px from the bottom, 3 px closer to the right edge and 2 px closer to the bottom than before.
+    <news>1.7.18: The service no longer patches Red Light's Python. Red Light 2.9.6 sets the season, episode and show title itself. The popup layout is unchanged.
+1.7.17: The Autoplay Next Episode card sits 9 px from the right edge and 9 px from the bottom, 3 px closer to the right edge and 2 px closer to the bottom than before.
 1.7.16: The Autoplay Next Episode card sits 12 px from the right edge and 11 px from the bottom, down from 24 px and 23 px, so it is closer to the screen edges.
 1.7.15: Play is back to 200 px wide. The Play Now text box and the icon box are wider, so the text is no longer cut off on a TV.
 1.7.14: The Play button is 230 px wide, 20 px wider, and its ends keep their full curve.
