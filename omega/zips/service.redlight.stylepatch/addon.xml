@@ -1,18 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.7.18">
+<addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.7.19">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
   </requires>
   <extension point="xbmc.service" library="service.py" start="startup" />
   <extension point="xbmc.addon.metadata">
     <summary lang="en_GB">Keeps the Red Light loading-screen and Autoplay Next Episode styles after Red Light updates.</summary>
-    <description lang="en_GB">Reapplies a rotating cyan-blue loading spinner with a pulsing centre, and hides Red Light's busy spinner and provider, source and filename text on its playback loading screen. Moves the Autoplay Next Episode popup to a card in the lower-right corner, with the episode thumbnail, any season premiere or finale banner, the countdown, the season and episode, the show title and the Play and Cancel buttons. The logo, episode title and Close button are removed. Each change is applied only when the known stock layout is present, so an unrecognised Red Light layout is left untouched.</description>
+    <description lang="en_GB">Reapplies a rotating cyan-blue loading spinner with a pulsing centre, and hides Red Light's busy spinner and provider, source and filename text on its playback loading screen. Moves the Autoplay Next Episode popup to a card in the lower-right corner, with the episode thumbnail, any season premiere or finale banner, the countdown, the season and episode, the episode name, the show title and the Close, Play and Cancel buttons. The Skip Intro and autoscrape prompts use the same card. The logo is removed. Still Watching keeps its stock layout. Each change is applied only when the known stock layout is present, so an unrecognised Red Light layout is left untouched.</description>
     <platform>all</platform>
     <license>MIT</license>
     <assets>
       <icon>icon-spinner.png</icon>
     </assets>
-    <news>1.7.18: The service no longer patches Red Light's Python. Red Light 2.9.6 sets the season, episode and show title itself. The popup layout is unchanged.
+    <news>1.7.19: The Autoplay Next Episode popup has a Close button to the left of Play, a dark grey background, and the episode name above the show title. The Skip Intro and autoscrape prompts use the same card, with Yes and No. Still Watching is unchanged. Upgrades the 1.7.18 popup in place.
+1.7.18: The service no longer patches Red Light's Python. Red Light 2.9.6 sets the season, episode and show title itself. The popup layout is unchanged.
 1.7.17: The Autoplay Next Episode card sits 9 px from the right edge and 9 px from the bottom, 3 px closer to the right edge and 2 px closer to the bottom than before.
 1.7.16: The Autoplay Next Episode card sits 12 px from the right edge and 11 px from the bottom, down from 24 px and 23 px, so it is closer to the screen edges.
 1.7.15: Play is back to 200 px wide. The Play Now text box and the icon box are wider, so the text is no longer cut off on a TV.
