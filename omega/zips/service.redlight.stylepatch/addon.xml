@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.8.0">
+<addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.8.1">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
   </requires>
