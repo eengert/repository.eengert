@@ -307,7 +307,7 @@ Backup Pro archives are unchanged.
       <license>MIT</license>
     </extension>
   </addon>
-  <addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.8.1">
+  <addon id="service.redlight.stylepatch" name="Red Light Style Patch" provider-name="Eric" version="1.8.2">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
     </requires>
