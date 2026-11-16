@@ -1,8 +1,15 @@
 # Red Light players for TMDb Helper
 
 These player definitions address episode playback compatibility between TMDb
-Helper and Red Light 2.2.7 by including the episode `playcount` parameter Red
-Light expects.
+Helper and Red Light by using direct, resolvable `plugin://` playback URLs.
+This allows TMDb Helper to initialize its scrobbler episode metadata and run
+its playback-triggered watched-data sync and widget refresh. The episode
+`playcount=0` compatibility parameter is preserved.
+
+Auto Play and Source Select use this route for both movies and episodes.
+The bundled Red Light Options Menu already uses direct plugin URLs.
+Episode Auto Play was verified in Kodi on macOS with the temporary response
+capture removed; movie and Source Select playback have not been retested.
 
 They use neutral, unique filenames so older copies in TMDb Helper's
 `reconfigured_players` directory cannot silently override the correction.

@@ -67,8 +67,9 @@ Use the following URL in TMDb Helper's **Players URL** setting:
 https://eengert.github.io/repository.eengert/jsonplayers.zip
 ```
 
-This is the Old Man Jax player bundle with a Red Light 2.2.7 compatibility fix
-for episode playback through TMDb Helper. Select **Red Light - Auto Play
+This is the Old Man Jax player bundle with Red Light compatibility fixes:
+direct, resolvable playback URLs for TMDb Helper scrobbling and refresh, plus
+the episode `playcount=0` parameter. Select **Red Light - Auto Play
 (Updated)** as the default episode player. Its unique filename prevents older
 reconfigured player files from overriding it.
 
